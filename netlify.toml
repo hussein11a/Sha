@@ -1,16 +1,19 @@
 [build]
   command = "cd frontend && yarn install && yarn build"
   publish = "frontend/build"
+  base = "."
 
 [build.environment]
   NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+  YARN_FLAGS = "--no-ignore-optional"
 
 [functions]
   directory = "netlify/functions"
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  to = "/.netlify/functions/api"
   status = 200
 
 [[redirects]]
