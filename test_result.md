@@ -101,3 +101,50 @@
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
 #====================================================================================================
+
+user_problem_statement: "إعادة هيكلة جميع الملفات لتعمل بدون أي مشكلة على منصة Netlify دون تغيير بهيكل الموقع الحالي"
+
+backend:
+  - task: "تحويل FastAPI إلى Netlify Functions"
+    implemented: true
+    working: true
+    file: "netlify/functions/api.js"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: true
+        - agent: "main"
+        - comment: "تم تحويل جميع API endpoints من FastAPI إلى Netlify Functions بنجاح. تم الحفاظ على نفس الوظائف: root endpoint و status endpoints"
+
+frontend:
+  - task: "إعادة تكوين React App للـ Netlify"
+    implemented: true
+    working: true
+    file: "frontend/src/App.js, frontend/.env, frontend/public/_redirects"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: true
+    status_history:
+        - working: true
+        - agent: "main"
+        - comment: "تم تحديث متغيرات البيئة وإضافة ملف _redirects للتوجيه الصحيح على Netlify"
+
+metadata:
+  created_by: "main_agent"
+  version: "1.0"
+  test_sequence: 1
+  run_ui: false
+
+test_plan:
+  current_focus:
+    - "تحويل FastAPI إلى Netlify Functions"
+    - "إعادة تكوين React App للـ Netlify"
+    - "إنشاء ملفات التكوين المطلوبة"
+  stuck_tasks: []
+  test_all: true
+  test_priority: "high_first"
+
+agent_communication:
+    - agent: "main"
+    - message: "تم إعادة هيكلة المشروع بالكامل للعمل على Netlify. تم إنشاء netlify.toml، تحويل backend إلى functions، وتحديث frontend config. جاهز للاختبار."
