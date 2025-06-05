@@ -3,7 +3,6 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
-// For Netlify deployment, use relative URLs for API calls
 const API_BASE = process.env.REACT_APP_BACKEND_URL || '';
 const API = `${API_BASE}/api`;
 
@@ -13,7 +12,7 @@ const Home = () => {
       const response = await axios.get(`${API}/`);
       console.log(response.data.message);
     } catch (e) {
-      console.error(e, `errored out requesting / api`);
+      console.error(e, `Error contacting backend API`);
     }
   };
 
@@ -22,17 +21,14 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" alt="Emergent Logo" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
+    <div className="container">
+      <header className="header">
+        <h1 className="site-title">سطحة هيدروليك</h1>
+        <p className="site-description">خدمة نقل السيارات في أسرع وقت، بأمان واحترافية</p>
+        <div className="cta-buttons">
+          <a href="tel:0500000000" className="btn call">اتصل الآن</a>
+          <a href="https://wa.me/966500000000" className="btn whatsapp" target="_blank" rel="noopener noreferrer">راسلنا واتساب</a>
+        </div>
       </header>
     </div>
   );
@@ -43,9 +39,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>
     </div>
