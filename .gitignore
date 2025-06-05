@@ -68,3 +68,24 @@ __pycache__/
 
 # Android SDK
 android-sdk/
+
+# ===================
+# NETLIFY SPECIFIC RULES
+# ===================
+# Netlify build output
+.netlify/
+
+# Old Docker files (not needed for Netlify)
+Dockerfile
+nginx.conf
+entrypoint.sh
+
+# Old backend directory (converted to Netlify Functions)
+backend/__pycache__/
+
+# Frontend specific
+frontend/build/
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
