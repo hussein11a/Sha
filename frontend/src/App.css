@@ -1,38 +1,59 @@
-.App {
-    text-align: center;
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0c1a2b, #132a44);
+  color: #cfe9d7;
+  text-align: center;
 }
 
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+.container {
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.header {
+  padding: 4rem 2rem;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.site-title {
+  color: #a8ff60;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
-.App-link {
-    color: #61dafb;
+.site-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #e0ffe6;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.btn.call {
+  background-color: #28a745;
+}
+
+.btn.call:hover {
+  background-color: #218838;
+}
+
+.btn.whatsapp {
+  background-color: #25d366;
+}
+
+.btn.whatsapp:hover {
+  background-color: #1ebe5a;
 }
