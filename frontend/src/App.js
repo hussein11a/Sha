@@ -3,8 +3,14 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { useEffect } from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
+
+// For Netlify deployment, use relative URLs for API calls
+const API_BASE = process.env.REACT_APP_BACKEND_URL || '';
+const API = `${API_BASE}/api`;
 
 const Home = () => {
   const helloWorldApi = async () => {
@@ -29,7 +35,7 @@ const Home = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
+          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" alt="Emergent Logo" />
         </a>
         <p className="mt-5">Building something incredible ~!</p>
       </header>
