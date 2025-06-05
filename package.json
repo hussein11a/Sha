@@ -1,0 +1,17 @@
+{
+  "name": "netlify-fullstack-app",
+  "version": "1.0.0",
+  "description": "Full-stack application restructured for Netlify",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd frontend && yarn install && yarn build",
+    "dev": "cd frontend && yarn start",
+    "netlify-dev": "netlify dev"
+  },
+  "dependencies": {
+    "mongodb": "^4.5.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^17.0.0"
+  }
+}
